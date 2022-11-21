@@ -95,7 +95,7 @@ public class EquipeRepository {
 
         try (Connection connection = ConnectionFactory.getConnection()) {
 
-            String selectMatriculas = "select fk_matricula from equipe";
+            String selectMatriculas = "select fk_matricula from equipe where fk_cadastro = " + id;
             PreparedStatement pstm2 = connection.prepareStatement(selectMatriculas);
 
             ResultSet result2 = pstm2.executeQuery();
